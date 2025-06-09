@@ -6,6 +6,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="./Css/base.css" />
     <link rel="stylesheet" href="./Css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 </head>
 <body>
     <header>
@@ -24,12 +31,29 @@
     <main>
         <div class="container">
           <div class="products-list"></div>
+          <div class="myModal">
+          <div class="modal-img">
+            <i class="fa-solid fa-arrow-left left-btn"></i>
+
+            <img src="" alt="Product Image" class="modal-image" />
+            <i class="fa-solid fa-xmark close-btn"></i>
+            <i class="fa-solid fa-arrow-right right-btn "></i>
+          </div>
+        </div>
+        <div class="pagination-list">
+            <ul class="pagination">
+                
+            </ul>
+        </div>
             </div>
 
 
 
 
     </main>
+          
+
+
      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./JS/products.js"></script>
 </body>
