@@ -45,3 +45,38 @@ async function getProducts() {
     }
 }
 getProducts();
+const searchButton = document.querySelector(".search-button");
+searchButton.addEventListener("click", searchProducts);
+async function searchProducts(){
+    const query = document.querySelector(".search-input").value;
+    console.log(query);
+    try {
+        const response= await axios.get(`https://dummyjson.com/products/search?q=${encodeURIComponent(query)}`);
+        
+      const products = response.data.products;
+
+      const resultsOfSearch= document.querySelector('.products-list');
+      const  searchResult=document.querySelector('.top-products h1');
+      resultsOfSearch.innerHTML = '';
+      if (products.length === 0) {
+        resultsOfSearch.innerHTML = '<p> No products found.</p>';
+        return;
+      }
+
+      products.forEach(product => {
+        searchResult.textContent = product.title;
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerHTML = `
+          <img src="${product.thumbnail}" alt="${product.title}">
+          <h4>${product.title}</h4>
+          <p>${product.description}</p>
+          <strong>💲${product.price}</strong>
+        `;
+        resultsOfSearch.appendChild(productDiv);
+      });
+    }
+catch (error) {
+    console.error("Error searching products:", error);
+    
+}}
