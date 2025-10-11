@@ -1,4 +1,5 @@
 async function getProductDetails() {
+  document.querySelector(".spinner").classList.remove("d-none");
 
   try {
     const params = new URLSearchParams(window.location.search);
@@ -26,6 +27,8 @@ async function getProductDetails() {
     console.error("Error fetching product details:", error);
     document.querySelector(".product-details").innerText = "❌ Failed to load product.";
   }
+  finally {
+    document.querySelector(".spinner").classList.add("d-none");}
 }
 
 getProductDetails();

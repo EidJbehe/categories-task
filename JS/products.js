@@ -2,6 +2,7 @@ let currentSortBy = null;
 let currentOrder = null;
 
 async function getProducts() {
+  document.querySelector(".spinner").classList.remove("d-none");
   try {
     const params = new URLSearchParams(window.location.search);
     const category = params.get("category");
@@ -90,6 +91,9 @@ async function getProducts() {
   } catch (error) {
     console.error("Error fetching products:", error);
   }
+  finally {
+    document.querySelector(".spinner").classList.add("d-none"); 
+}
 }
 
 getProducts();
@@ -97,6 +101,7 @@ getProducts();
 /*Sorr proudcts */
 document.querySelector("#sortBtn").addEventListener("click", sortProducts);
 async function sortProducts() {
+  
   const sortSelect = document.querySelector("#sortBy").value;
   const sortOrder = document.querySelector("#order").value;
 

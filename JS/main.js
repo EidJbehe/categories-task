@@ -1,4 +1,5 @@
 async function getCategories() {
+  document.querySelector(".spinner").classList.remove("d-none");
     try{
   const {data} = await axios.get("https://dummyjson.com/products/category-list");
     const topFive = data.slice(0, 5); 
@@ -19,9 +20,12 @@ async function getCategories() {
 catch (error) {
    console.error("Error fetching categories:", error); 
 }
+finally{
+  document.querySelector(".spinner").classList.add("d-none");}
 }
 getCategories();
 async function getProducts() {
+  document.querySelector(".spinner").classList.remove("d-none");
     try {
         const { data } = await axios.get("https://dummyjson.com/products?limit=5");
         const products = data.products.slice(0, 5); // Get the first 5 products
@@ -43,11 +47,14 @@ async function getProducts() {
     } catch (error) {
         console.error("Error fetching products:", error);
     }
+    finally{
+      document.querySelector(".spinner").classList.add("d-none");}
 }
 getProducts();
 const searchButton = document.querySelector(".search-button");
 searchButton.addEventListener("click", searchProducts);
 async function searchProducts(){
+    document.querySelector(".spinner").classList.remove("d-none");
     const query = document.querySelector(".search-input").value;
     console.log(query);
     try {
@@ -79,4 +86,6 @@ async function searchProducts(){
 catch (error) {
     console.error("Error searching products:", error);
     
-}}
+}
+finally{
+  document.querySelector(".spinner").classList.add("d-none");}}

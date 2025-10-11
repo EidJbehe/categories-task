@@ -1,4 +1,5 @@
 async function getCategories() {
+  document.querySelector(".spinner").classList.remove("d-none");
     try{
       
   const {data} = await axios.get("https://dummyjson.com/products/category-list");
@@ -19,5 +20,7 @@ async function getCategories() {
 catch (error) {
     console.error("Error fetching categories:", error); 
 }
+finally{
+  document.querySelector(".spinner").classList.add("d-none");}
 };
 getCategories();
