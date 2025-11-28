@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./Css/base.css" />
+  <link rel="stylesheet" href="./Css/style.css" />
+  <link rel="stylesheet" href="./Css/product.css" />
+</head>
+
+<body>
+   <header>
+      <nav >
+        <div class="logo">
+          <a href="index.html">
+            <span class="logo-text">Categories Shop</span>
+          </a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="./categories.html">Categories</a></li>
+          <li><a href="./products.html">Proudcts</a></li>
+        </ul>
+      </nav>
+    </header>
+  <main>
+    <div
+      class="position-fixed top-50 start-50 translate-middle d-flex justify-content-center align-items-center overlay-layer">
+      <div class="spinner spinner-border text-primary d-none custom-spinner" role="status">
+        <span class="visually-hidden"></span>
+      </div>
+    </div>
+    <div class="container">
+      
+      <div class="product-details"></div>
+
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./JS/product.js"></script>
+</body>
+
+</html>
