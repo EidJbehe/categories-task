@@ -60,3 +60,11 @@ header {
   color: #fff;
   text-decoration: underline;
 }
+
+.overlay-layer {
+  z-index: 1050;
+}
+.custom-spinner {
+  width: 4rem;
+  height: 4rem;
+}
